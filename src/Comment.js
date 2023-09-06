@@ -57,8 +57,19 @@ function getTimePassed(ms) {
   if (minutes < 60) return `${minutes.toFixed()}min ago`;
 
   let hours = minutes / 60;
-  if (hours < 24) return `${hours.toFixed()}h ago`;
-  return;
+  if (hours < 24) return `${hours.toFixed()}hrs ago`;
+
+  let days = hours / 24;
+  if (days < 7) return `${days.toFixed()}days ago`;
+
+  let weeks = days / 7;
+  if (weeks < 4) return `${weeks.toFixed()}wks ago`;
+
+  let months = days / 30;
+  if (months < 12) return `${months.toFixed()}mo ago`;
+
+  let years = days / 365;
+  return `${years.toFixed()}yrs ago`;
 }
 
 Comment.fromJSON = function (json) {

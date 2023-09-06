@@ -1,6 +1,5 @@
-html > p {
-  font-size: 1.5rem;
-  font-family: "Courier New", Courier, monospace;
+p {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
 body {
@@ -24,16 +23,12 @@ nav > a {
   font-size: 1.5rem;
 }
 
-main {
-  padding-left: 3%;
-}
-
 .align-centre {
-  text-align : center;
+  text-align: center;
 }
 
 .align-left {
-  text-align : left;
+  text-align: left;
 }
 
 .container {
