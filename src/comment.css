@@ -1,14 +1,29 @@
 .comment {
   border-bottom: 2px solid black;
+  background-color: beige;
 }
 
-.comment-header {
+.thread {
+  background-color: bisque;
+}
+
+.comment-header,
+.thread-header {
   display: flex;
   flex-direction: row;
   gap: 20px;
   margin: 0;
 }
 
+.thread-title {
+  margin: 0;
+  padding-left: 20px;
+  margin-bottom: 10px;
+}
+
+.thread-comments {
+  padding-left: 3%;
+}
 .comment-header > * {
   margin: 5px;
 }
@@ -16,4 +31,29 @@
 .comment-text {
   margin: 0;
   padding-left: 20px;
+}
+
+#comment-submit-button {
+  display: block;
+  margin: 0 auto;
+  width: 100px;
+  background-color: blanchedalmond;
+  border: 3px solid greenyellow;
+  border-radius: 5px;
+}
+
+#comment-author-input {
+  display: block;
+  height: 30px;
+}
+#comment-text-input {
+  display: block;
+  height: 100px;
+}
+
+#comment-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 0px 20px;
 }

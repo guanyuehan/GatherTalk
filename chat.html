@@ -12,15 +12,28 @@
     <navbar-component></navbar-component>
 
     <main>
-      <button onclick="addComment()">Add comment</button>
-      <button onclick="refreshPage()">Refresh</button>
       <button onclick="clearSaved()">Clear</button>
       <div id="chat"></div>
+      <form onsubmit="addComment(event)" id="comment-form">
+        <textarea
+          id="comment-author-input"
+          type="text"
+          placeholder="Type your name here..."
+          rows="1"
+        ></textarea>
+        <textarea
+          id="comment-text-input"
+          type="text"
+          placeholder="Type something here..."
+        ></textarea>
+        <button id="comment-submit-button">Submit</button>
+      </form>
     </main>
 
     <script src="./src/Thread.js"></script>
     <script src="./src/Comment.js"></script>
     <script src="./src/page.js"></script>
+    <script src="./src/form.js"></script>
     <script src="./src/main.js"></script>
   </body>
 </html>

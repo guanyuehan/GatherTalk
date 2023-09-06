@@ -1,15 +1,12 @@
 function refreshPage() {
-  mainThreadElement.innerHTML = "";
-  for (let comment of mainThread.comments) {
-    mainThreadElement.appendChild(comment.createElement());
-  }
+  mainThreadElement.innerHTML = mainThread.createElement().innerHTML;
+  save();
 }
 
 function save() {
   let json = mainThread.getJSON();
   json = JSON.stringify(json);
   localStorage.setItem("mainThread", json);
-  console.log(json);
 }
 
 function loadPage() {
