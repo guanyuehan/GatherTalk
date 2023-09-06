@@ -26,3 +26,9 @@ class Thread {
     };
   }
 }
+
+Thread.fromJSON = function (json) {
+  const thread = new Thread(json.title, json.author, json.date);
+  thread.comments = json.comments.map((comment) => Comment.fromJSON(comment));
+  return thread;
+};

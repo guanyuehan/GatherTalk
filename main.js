@@ -1,7 +1,18 @@
 const chat = document.getElementById("chat");
 
-const mainThread = new Thread("Main Thread", "Tricia", new Date());
-const mainThreadElement = mainThread.createElement();
+const saved = localStorage.getItem("mainThread");
+let mainThread;
+let mainThreadElement;
+if (saved != null) {
+  let json = JSON.parse(saved);
+  mainThread = Thread.fromJSON(json);
+  mainThreadElement = mainThread.createElement();
+  loadPage();
+} else {
+  mainThread = new Thread("Main Thread", "Tricia", new Date());
+  mainThreadElement = mainThread.createElement();
+}
+
 chat.appendChild(mainThreadElement);
 
 function addComment() {
@@ -9,13 +20,4 @@ function addComment() {
   const comment = new Comment(1, "This is a comment", "Tricia", date, null);
   mainThread.addComment(comment);
   mainThreadElement.appendChild(comment.createElement());
-}
-
-function refreshPage() {
-  console.log(mainThread);
-  console.log(mainThread.comments);
-  mainThreadElement.innerHTML = "";
-  for (let comment of mainThread.comments) {
-    mainThreadElement.appendChild(comment.createElement());
-  }
 }

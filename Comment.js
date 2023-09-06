@@ -1,12 +1,9 @@
 class Comment {
-  constructor(id, text, author, date, thread) {
+  constructor(id, text, author, date) {
     this.id = id;
     this.text = text;
     this.author = author;
     this.date = date;
-    this.thread = thread;
-
-    if (this.thread instanceof Thread) this.thread.addComment(this);
   }
 
   createElement() {
@@ -63,3 +60,13 @@ function getTimePassed(ms) {
   if (hours < 24) return `${hours.toFixed()}h ago`;
   return;
 }
+
+Comment.fromJSON = function (json) {
+  const comment = new Comment(
+    json.id,
+    json.text,
+    json.author,
+    new Date(json.date)
+  );
+  return comment;
+};
