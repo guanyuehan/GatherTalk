@@ -1,0 +1,19 @@
+.comment {
+  border-bottom: 2px solid black;
+}
+
+.comment-header {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  margin: 0;
+}
+
+.comment-header > * {
+  margin: 5px;
+}
+
+.comment-text {
+  margin: 0;
+  padding-left: 20px;
+}

@@ -13,5 +13,16 @@ class Thread {
   createElement() {
     const threadDiv = document.createElement("div");
     threadDiv.classList.add("thread");
+
+    return threadDiv;
+  }
+
+  getJSON() {
+    return {
+      title: this.title,
+      author: this.author,
+      date: this.date,
+      comments: this.comments.map((comment) => comment.getJSON()),
+    };
   }
 }

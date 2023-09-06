@@ -1,10 +1,12 @@
 class Comment {
-  constructor(id, text, author, date, replies) {
+  constructor(id, text, author, date, thread) {
     this.id = id;
     this.text = text;
     this.author = author;
     this.date = date;
-    this.replies = replies;
+    this.thread = thread;
+
+    if (this.thread instanceof Thread) this.thread.addComment(this);
   }
 
   createElement() {
@@ -12,21 +14,52 @@ class Comment {
     commentDiv.classList.add("comment");
     commentDiv.id = this.id;
 
-    //TEXT
-    const commentText = document.createElement("p");
-    commentText.innerHTML = this.text;
-    commentDiv.appendChild(commentText);
+    const commentHeader = document.createElement("div");
+    commentHeader.classList.add("comment-header");
+    commentDiv.appendChild(commentHeader);
 
     //AUTHOR
     const commentAuthor = document.createElement("p");
-    commentAuthor.innerHTML = this.author;
-    commentDiv.appendChild(commentAuthor);
+    commentAuthor.innerText = `By: ${this.author}`;
+    commentHeader.appendChild(commentAuthor);
 
     //DATE
+
+    //TODO: Make this a date object
     const commentDate = document.createElement("p");
-    commentDate.innerHTML = this.date;
-    commentDiv.appendChild(commentDate);
+    let longAgo = new Date().getTime() - this.date.getTime();
+    longAgo = getTimePassed(longAgo);
+    commentDate.innerText = `On: ${longAgo}`;
+    commentHeader.appendChild(commentDate);
+
+    //TEXT
+    const commentText = document.createElement("p");
+    commentText.innerText = this.text;
+    commentText.classList.add("comment-text");
+    commentDiv.appendChild(commentText);
 
     return commentDiv;
   }
+
+  getJSON() {
+    return {
+      id: this.id,
+      text: this.text,
+      author: this.author,
+      date: this.date,
+    };
+  }
+}
+
+function getTimePassed(ms) {
+  let seconds = ms / 1000;
+
+  if (seconds < 60) return `${seconds.toFixed()}s ago`;
+
+  let minutes = seconds / 60;
+  if (minutes < 60) return `${minutes.toFixed()}min ago`;
+
+  let hours = minutes / 60;
+  if (hours < 24) return `${hours.toFixed()}h ago`;
+  return;
 }
