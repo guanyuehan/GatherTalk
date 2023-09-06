@@ -22,3 +22,16 @@ nav > a {
 main {
   padding-left: 3%;
 }
+
+.align-centre {
+  text-align : center;
+}
+
+.container {
+  font-family: arial;
+  font-size: 15px;
+  margin: None;
+  width: 100vw;
+  height: 10vh;
+  outline: dashed 1px black;
+}
