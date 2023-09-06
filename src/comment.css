@@ -1,14 +1,29 @@
 .comment {
   border-bottom: 2px solid black;
+  background-color: beige;
 }
 
-.comment-header {
+.thread {
+  background-color: bisque;
+}
+
+.comment-header,
+.thread-header {
   display: flex;
   flex-direction: row;
   gap: 20px;
   margin: 0;
 }
 
+.thread-title {
+  margin: 0;
+  padding-left: 20px;
+  margin-bottom: 10px;
+}
+
+.thread-comments {
+  padding-left: 3%;
+}
 .comment-header > * {
   margin: 5px;
 }

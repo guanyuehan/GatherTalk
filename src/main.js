@@ -19,5 +19,5 @@ function addComment() {
   let date = new Date();
   const comment = new Comment(1, "This is a comment", "Tricia", date, null);
   mainThread.addComment(comment);
-  mainThreadElement.appendChild(comment.createElement());
+  refreshPage();
 }
