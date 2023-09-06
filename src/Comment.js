@@ -26,7 +26,7 @@ class Comment {
     const commentDate = document.createElement("p");
     let longAgo = new Date().getTime() - this.date.getTime();
     longAgo = getTimePassed(longAgo);
-    commentDate.innerText = `On: ${longAgo}`;
+    commentDate.innerText = `${longAgo}`;
     commentHeader.appendChild(commentDate);
 
     //TEXT
