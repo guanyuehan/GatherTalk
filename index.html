@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Com chat</title>
     <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="comment.css" />
   </head>
   <body>
     <nav>
@@ -12,5 +13,17 @@
       <a href="chat.php">Chat</a>
       <a href="about.php">About</a>
     </nav>
+
+    <main>
+      <button onclick="addComment()">Add comment</button>
+      <button onclick="refreshPage()">Refresh</button>
+      <button onclick="clearSaved()">Clear</button>
+      <div id="chat"></div>
+    </main>
+
+    <script src="Thread.js"></script>
+    <script src="Comment.js"></script>
+    <script src="page.js"></script>
+    <script src="main.js"></script>
   </body>
 </html>
