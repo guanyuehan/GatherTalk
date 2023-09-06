@@ -27,7 +27,7 @@ class Thread {
     const threadDate = document.createElement("p");
     let timePassed = new Date().getTime() - this.date.getTime();
     timePassed = getTimePassed(timePassed);
-    threadDate.innerText = `On: ${timePassed}`;
+    threadDate.innerText = `${timePassed}`;
     threadHeader.appendChild(threadDate);
 
     //TITLE

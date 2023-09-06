@@ -14,4 +14,5 @@ function addComment(event) {
   mainThread.addComment(comment);
   textInput.value = "";
   authorInput.value = "";
+  refreshPage();
 }
