@@ -1,0 +1,7 @@
+<div class="comment">
+  <div class="comment-header">
+    <p class="comment-author">By: <%= comment.author %></p>
+    <p class="comment-date"><%=helper.getTimePassedDiff(comment.datePosted)%></p>
+  </div>
+  <p class="comment-content"><%= comment.content %></p>
+</div>

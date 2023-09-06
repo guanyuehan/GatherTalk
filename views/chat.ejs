@@ -1,0 +1,48 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Com chat</title>
+  <link rel="stylesheet" href="/styles/style.css" />
+  <link rel="stylesheet" href="/styles/comment.css" />
+</head>
+
+<body>
+  <%-include("./partials/navbar.ejs", {selected:"chat"}) %>
+
+  <main>
+    <h1>Chat</h1>
+
+    <div id="chat">
+      <div class="thread">
+        <div class="thread-header">
+          <p>Thread author</p>
+          <p>date</p>
+        </div>
+        <p class="thread-Content">Content</p>
+        <div class="thread-comments">
+          <%comments.forEach(comment => { %>
+          <%-include("./partials/comment.ejs", {comment, helper}) %>
+          <% }) %>
+        </div>
+
+        <% if (comments.length == 0)  {%>
+        <p class="no-comments">No comments yet</p>
+        <% } %>
+      </div>
+    </div>
+    <form action="/add-comment" id="comment-form" method="POST">
+      <textarea id="comment-author-input" type="text" placeholder="Type your name here..." rows="1" name="author"></textarea>
+      <textarea id="comment-text-input" type="text" placeholder="Type something here..." name="content"></textarea>
+      <button id="comment-submit-button">Post comment</button>
+    </form>
+
+    <button onclick="clearSaved()">Clear local storage</button>
+
+  </main>
+
+  <script src="/src/page.js"></script>>
+</body>
+
+</html>
