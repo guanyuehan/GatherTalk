@@ -32,3 +32,28 @@
   margin: 0;
   padding-left: 20px;
 }
+
+#comment-submit-button {
+  display: block;
+  margin: 0 auto;
+  width: 100px;
+  background-color: blanchedalmond;
+  border: 3px solid greenyellow;
+  border-radius: 5px;
+}
+
+#comment-author-input {
+  display: block;
+  height: 30px;
+}
+#comment-text-input {
+  display: block;
+  height: 100px;
+}
+
+#comment-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 0px 20px;
+}
