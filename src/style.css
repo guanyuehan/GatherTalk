@@ -27,3 +27,20 @@ nav > a {
 main {
   padding-left: 3%;
 }
+
+.align-centre {
+  text-align : center;
+}
+
+.align-left {
+  text-align : left;
+}
+
+.container {
+  font-family: arial;
+  font-size: 24px;
+  margin: None;
+  width: 90vw;
+  height: 10vh;
+  outline: dashed 1px black;
+}
