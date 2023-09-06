@@ -1,7 +1,7 @@
 class Comment {
-  constructor(id, text, author, date) {
+  constructor(id, content, author, date) {
     this.id = id;
-    this.text = text;
+    this.content = content;
     this.author = author;
     this.date = date;
   }
@@ -21,8 +21,6 @@ class Comment {
     commentHeader.appendChild(commentAuthor);
 
     //DATE
-
-    //TODO: Make this a date object
     const commentDate = document.createElement("p");
     let longAgo = new Date().getTime() - this.date.getTime();
     longAgo = getTimePassed(longAgo);
@@ -30,10 +28,10 @@ class Comment {
     commentHeader.appendChild(commentDate);
 
     //TEXT
-    const commentText = document.createElement("p");
-    commentText.innerText = this.text;
-    commentText.classList.add("comment-text");
-    commentDiv.appendChild(commentText);
+    const contentDiv = document.createElement("p");
+    contentDiv.innerText = this.content;
+    contentDiv.classList.add("comment-text");
+    commentDiv.appendChild(contentDiv);
 
     return commentDiv;
   }
@@ -41,7 +39,7 @@ class Comment {
   getJSON() {
     return {
       id: this.id,
-      text: this.text,
+      content: this.content,
       author: this.author,
       date: this.date,
     };
@@ -75,7 +73,7 @@ function getTimePassed(ms) {
 Comment.fromJSON = function (json) {
   const comment = new Comment(
     json.id,
-    json.text,
+    json.content,
     json.author,
     new Date(json.date)
   );

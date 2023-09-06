@@ -1,6 +1,6 @@
 class Thread {
   constructor(text, author, date) {
-    this.title = text;
+    this.Content = text;
     this.author = author;
     this.date = date;
     this.comments = [];
@@ -30,11 +30,11 @@ class Thread {
     threadDate.innerText = `${timePassed}`;
     threadHeader.appendChild(threadDate);
 
-    //TITLE
-    const threadTitle = document.createElement("p");
-    threadTitle.innerText = this.title;
-    threadTitle.classList.add("thread-title");
-    threadDiv.appendChild(threadTitle);
+    //Content
+    const threadContent = document.createElement("p");
+    threadContent.innerText = this.Content;
+    threadContent.classList.add("thread-Content");
+    threadDiv.appendChild(threadContent);
 
     //COMMENTS
     const threadComments = document.createElement("div");
@@ -47,7 +47,7 @@ class Thread {
 
   getJSON() {
     return {
-      title: this.title,
+      Content: this.Content,
       author: this.author,
       date: this.date,
       comments: this.comments.map((comment) => comment.getJSON()),
@@ -56,7 +56,7 @@ class Thread {
 }
 
 Thread.fromJSON = function (json) {
-  const thread = new Thread(json.title, json.author, new Date(json.date));
+  const thread = new Thread(json.Content, json.author, new Date(json.date));
   thread.comments = json.comments.map((comment) => Comment.fromJSON(comment));
   return thread;
 };

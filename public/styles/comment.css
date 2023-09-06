@@ -3,6 +3,10 @@
   background-color: beige;
 }
 
+.no-comments {
+  background-color: greenyellow;
+  text-align: center;
+}
 .thread {
   background-color: bisque;
   border-radius: 15px;
@@ -16,7 +20,7 @@
   margin: 0;
 }
 
-.thread-title {
+.thread-content {
   margin: 0;
   padding-left: 20px;
   padding-bottom: 20px;
