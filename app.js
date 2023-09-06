@@ -92,6 +92,7 @@ app.get("/chat", async (req, res) => {
     console.log(err);
   }
   res.render("chat", { comments, helper });
+
 });
 
 app.use((req, res) => {
