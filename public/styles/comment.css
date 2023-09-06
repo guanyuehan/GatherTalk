@@ -5,6 +5,7 @@
 
 .thread {
   background-color: bisque;
+  border-radius: 15px;
 }
 
 .comment-header,
