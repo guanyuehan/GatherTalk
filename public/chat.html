@@ -9,10 +9,9 @@
     <script src="components/Navbar.js" type="text/javascript" defer></script>
   </head>
   <body>
-    <navbar-component></navbar-component>
+    <navbar-component selected="chat"></navbar-component>
 
     <main>
-      <button onclick="clearSaved()">Clear</button>
       <div id="chat"></div>
       <form onsubmit="addComment(event)" id="comment-form">
         <textarea
@@ -26,8 +25,9 @@
           type="text"
           placeholder="Type something here..."
         ></textarea>
-        <button id="comment-submit-button">Submit</button>
+        <button id="comment-submit-button">Post comment</button>
       </form>
+      <button onclick="clearSaved()">Clear local storage</button>
     </main>
 
     <script src="./src/Thread.js"></script>
