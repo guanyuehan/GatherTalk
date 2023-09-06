@@ -2,4 +2,10 @@
   <a href="../home" id="navbar--home">Home</a>
   <a href="../chat" id="navbar--chat">Chat</a>
   <a href="../about" id="navbar--about">About</a>
+  <% if (selected) { %>
+  <script>
+    document.getElementById(`navbar--<%=selected%>`).style.textDecoration =
+      "underline";
+  </script>
+  <% } %>
 </nav>
