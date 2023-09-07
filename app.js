@@ -1,6 +1,6 @@
 import express from "npm:express";
 import mongoose from "npm:mongoose";
-import Comment from "./models/comment";
+import Comment from "./models/comment.js";
 
 //helper functions
 const helper = require("./helperFuncs");
