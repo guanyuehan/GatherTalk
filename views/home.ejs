@@ -1,17 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home--GatherTalk</title>
+    <link rel="stylesheet" href="/styles/style.css" />
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Home--GatherTalk</title>
-  <link rel="stylesheet" href="/styles/style.css" />
-</head>
+  <body>
+    <%-include("./partials/navbar.ejs", {selected:"home"}) %>
+    <navbar-component selected="home"></navbar-component>
 
-<body>
-  <%-include("./partials/navbar.ejs", {selected:"home"}) %>
-
-  <h1 class="align-centre">GatherTalk</h1>
-</body>
-
+    <h1 class="home-title">Home page</h1>
+    <main>
+      <br />
+      <h4 class="bold text-center">Places in the community</h4>
+      <div class="places-div">
+        <div>
+          <p class="place-label">roof garden</p>
+          <img src="/assets/roofGarden.jpg" alt="roofgarden-img" />
+        </div>
+        <div>
+          <p class="place-label">community centre</p>
+          <img src="/assets/communityCentre.jpg" alt="communityCentre-img" />
+        </div>
+        <div>
+          <p class="place-label">fitness corner</p>
+          <img src="/assets/fitnessCorner.jpg" alt="fitnessCorner-img" />
+        </div>
+      </div>
+    </main>
+  </body>
+  <footer></footer>
 </html>
