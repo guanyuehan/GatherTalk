@@ -11,7 +11,6 @@ const app = express();
 //listen for requests
 const PORT = process.env.PORT || 3000;
 
-//connect to mongodb(yes I'm kind enough to give you my password >:)  )
 const DBURI =
   "mongodb+srv://ExTier1:extiertricia@chatapp.o5tqawl.mongodb.net/ChatApp?retryWrites=true&w=majority";
 mongoose
