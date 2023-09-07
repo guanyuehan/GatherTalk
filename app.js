@@ -3,7 +3,7 @@ import mongoose from "npm:mongoose";
 import Comment from "./models/comment.js";
 
 //helper functions
-const helper = require("./helperFuncs");
+import * as helper from "./helperFuncs.js";
 
 // create express app
 const app = express();

@@ -3,7 +3,7 @@ const mongoose = require("mongoose");
 const Comment = require("./models/comment");
 
 //helper functions
-const helper = require("./helperFuncs");
+const helper = require("./helperFuncs").default;
 
 // create express app
 const app = express();

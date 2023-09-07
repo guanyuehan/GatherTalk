@@ -27,4 +27,4 @@ function getTimePassedDiff(postedDate) {
   return getTimePassed(timePassed);
 }
 
-module.exports = { getTimePassed, getTimePassedDiff };
+export default { getTimePassedDiff };
