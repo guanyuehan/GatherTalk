@@ -1,22 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About--GatherTalk</title>
+    <link rel="stylesheet" href="/styles/style.css" />
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>About--GatherTalk</title>
-  <link rel="stylesheet" href="/styles/style.css" />
-</head>
+  <body>
+    <%-include("./partials/navbar.ejs", {selected:"about"}) %>
 
-<body>
-  <%-include("./partials/navbar.ejs", {selected:"about"}) %>
-  <h1>About page</h1>
-
-  <h7 class="align-centre container">Presenting GatherTalk. GatherTalk is a platform that aims to encourage<br>
-    community interactions. Using GatherTalk, people in the community <br>
-    will be able to communicate with each other easily. This will make <br>
-    the community more bonded and foster a sense of place in members of <br>
-    the community to increase social sustainability</h7>
-</body>
-
+    <h2 class="text-center about-title">Presenting GatherTalk</h2>
+    <div class="div-center">
+      <h7 class="text-center about-desc">
+        <span class="bold">GatherTalk</span> is a platform that aims to
+        encourage community interactions.<br />
+        Using <span class="bold">GatherTalk</span>, people in the community will
+        be able to communicate with each other easily.<br />
+        This will make the community more bonded and foster a sense of place in
+        members of he community to increase social sustainability<br />
+      </h7>
+    </div>
+  </body>
+  <footer class="div-center">
+    <a href="https://github.com/guanyuehan/GatherTalk" target="_blank">
+      <img
+        src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Octicons-mark-github.svg/2048px-Octicons-mark-github.svg.png"
+        alt="github"
+        width="50"
+        height="50"
+      />
+    </a>
+  </footer>
 </html>
