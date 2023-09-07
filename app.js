@@ -1,6 +1,6 @@
-const express = require("express");
-const mongoose = require("mongoose");
-const Comment = require("./models/comment");
+import express from "npm:express";
+import mongoose from "npm:mongoose";
+import Comment from "./models/comment";
 
 //helper functions
 const helper = require("./helperFuncs");
@@ -99,6 +99,3 @@ app.get("/chat", async (req, res) => {
 app.use((req, res) => {
   res.render("404");
 });
-
-// remember to remove the .html on the web url if its there
-// access using http://localhost:3000/home

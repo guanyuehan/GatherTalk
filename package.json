@@ -6,8 +6,10 @@
     "http": "^0.0.1-security",
     "mongodb": "^6.0.0",
     "mongoose": "^7.5.0",
+    "netlify-lambda": "^2.0.16",
     "node": "^20.5.1",
     "nodemon": "^3.0.1",
+    "serverless-http": "^3.2.0",
     "yarn": "^1.22.19"
   }
 }

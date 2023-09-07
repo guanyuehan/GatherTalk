@@ -65,6 +65,7 @@ nav > a {
   text-align: center;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   background: linear-gradient(to right, #e5ff00, #6200ff);
+  background-clip: text;
   -webkit-text-fill-color: transparent;
   -webkit-background-clip: text;
 }
