@@ -3,7 +3,7 @@ const mongoose = require("mongoose");
 const Comment = require("./models/comment");
 
 //helper functions
-const helper = require("./helperFuncs");
+const helper = require("./helperFuncs.js");
 
 // create express app
 const app = express();
@@ -72,7 +72,7 @@ app.post("/add-comment", (req, res) => {
 
 //routes
 app.get("/", (req, res) => {
-  res.redirect("home");
+  res.redirect("/home");
 });
 
 app.get("/home", (req, res) => {
@@ -91,12 +91,11 @@ app.get("/chat", async (req, res) => {
     console.log(err);
   }
   res.render("chat", { comments, helper });
-
 });
 
 app.use((req, res) => {
   res.render("404");
 });
 
-// remember to remove the .html on the web url if its there 
+// remember to remove the .html on the web url if its there
 // access using http://localhost:3000/home
