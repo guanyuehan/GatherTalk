@@ -75,7 +75,7 @@ app.post("/add-comment", (req, res) => {
 
 //routes
 app.get("/", (req, res) => {
-  res.redirect("home");
+  res.redirect("/home");
 });
 
 app.get("/home", (req, res) => {
