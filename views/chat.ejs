@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Com chat</title>
+  <title>Main Chat--GatherTalk</title>
   <link rel="stylesheet" href="/styles/style.css" />
   <link rel="stylesheet" href="/styles/comment.css" />
 </head>
@@ -17,10 +17,10 @@
     <div id="chat">
       <div class="thread">
         <div class="thread-header">
-          <p>Thread author</p>
-          <p>date</p>
+          <p style="font-weight: bold;">Community thread</p>
+          <p>1 day ago</p>
         </div>
-        <p class="thread-Content">Content</p>
+        <p class="thread-Content">Comment thread for chatting with fellow community members!</p>
         <div class="thread-comments">
           <%comments.forEach(comment => { %>
           <%-include("./partials/comment.ejs", {comment, helper}) %>
