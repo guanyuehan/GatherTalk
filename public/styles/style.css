@@ -3,7 +3,7 @@ p {
 }
 
 body {
-  padding: 0px;
+  padding: 0;
   margin: 0;
   min-height: 100vh;
   display: flex;
@@ -34,15 +34,6 @@ nav > a {
   text-decoration: none;
   font-size: 1.5rem;
 }
-
-.align-centre {
-  text-align: center;
-}
-
-.align-left {
-  text-align: left;
-}
-
 .container {
   font-family: arial;
   font-size: 24px;
@@ -66,7 +57,9 @@ nav > a {
   align-items: center;
 }
 
-.about-title {
+.about-title,
+.home-title,
+.chat-title {
   font-size: 2rem;
   font-weight: bold;
   text-align: center;
@@ -78,4 +71,26 @@ nav > a {
 
 .about-desc {
   font-size: 20px;
+}
+
+.places-div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.places-div > * {
+  text-align: center;
+}
+.places-div > div {
+  width: 100%;
+
+  /* border */
+  box-shadow: 2px 0 0 0 #888, 0 2px 0 0 #888, 2px 2px 0 0 #888,
+    /* Just to fix the corner */ 2px 0 0 0 #888 inset, 0 2px 0 0 #888 inset;
+}
+
+.place-label {
+  font-size: 0.75rem;
+  font-weight: bold;
 }

@@ -1,48 +1,59 @@
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Main Chat--GatherTalk</title>
+    <link rel="stylesheet" href="/styles/style.css" />
+    <link rel="stylesheet" href="/styles/comment.css" />
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Main Chat--GatherTalk</title>
-  <link rel="stylesheet" href="/styles/style.css" />
-  <link rel="stylesheet" href="/styles/comment.css" />
-</head>
+  <body>
+    <%-include("./partials/navbar.ejs", {selected:"chat"}) %>
 
-<body>
-  <%-include("./partials/navbar.ejs", {selected:"chat"}) %>
+    <main>
+      <h1 class="chat-title">GatherTalk--Chat</h1>
 
-  <main>
-    <h1>Chat</h1>
+      <div id="chat">
+        <div class="thread">
+          <div class="thread-header">
+            <p style="font-weight: bold">Community thread</p>
+            <p>1 day ago</p>
+          </div>
+          <p class="thread-Content">
+            Comment thread for chatting with fellow community members!
+          </p>
+          <div class="thread-comments">
+            <%comments.forEach(comment => { %>
+            <%-include("./partials/comment.ejs", {comment, helper}) %> <% }) %>
+          </div>
 
-    <div id="chat">
-      <div class="thread">
-        <div class="thread-header">
-          <p style="font-weight: bold;">Community thread</p>
-          <p>1 day ago</p>
+          <% if (comments.length == 0) {%>
+          <p class="no-comments">No comments yet</p>
+          <% } %>
         </div>
-        <p class="thread-Content">Comment thread for chatting with fellow community members!</p>
-        <div class="thread-comments">
-          <%comments.forEach(comment => { %>
-          <%-include("./partials/comment.ejs", {comment, helper}) %>
-          <% }) %>
-        </div>
-
-        <% if (comments.length == 0)  {%>
-        <p class="no-comments">No comments yet</p>
-        <% } %>
       </div>
-    </div>
-    <form action="/add-comment" id="comment-form" method="POST">
-      <textarea id="comment-author-input" type="text" placeholder="Type your name here..." rows="1" name="author"></textarea>
-      <textarea id="comment-text-input" type="text" placeholder="Type something here..." name="content"></textarea>
-      <button id="comment-submit-button">Post comment</button>
-    </form>
+      <form action="/add-comment" id="comment-form" method="POST">
+        <textarea
+          id="comment-author-input"
+          type="text"
+          placeholder="Type your name here..."
+          rows="1"
+          name="author"
+        ></textarea>
+        <textarea
+          id="comment-text-input"
+          type="text"
+          placeholder="Type something here..."
+          name="content"
+        ></textarea>
+        <button id="comment-submit-button">Post comment</button>
+      </form>
 
-    <button onclick="clearSaved()">Clear local storage</button>
+      <button onclick="clearSaved()" id="rickroll">Clear local storage</button>
+      <label for="rickroll">&larr; Insane button</label>
+    </main>
 
-  </main>
-
-  <script src="/src/page.js"></script>>
-</body>
-
+    <script src="/src/page.js"></script>
+  </body>
+  <footer></footer>
 </html>
