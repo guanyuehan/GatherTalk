@@ -8,8 +8,6 @@ const helper = require("./helperFuncs.js");
 // create express app
 const app = express();
 
-const router = express.Router();
-
 //listen for requests
 const PORT = process.env.PORT || 3000;
 
@@ -33,7 +31,6 @@ app.set("view engine", "ejs");
 //middleware & static files
 app.use(express.static("public"));
 app.use(express.urlencoded({ extended: true }));
-app.use("./netlify/functions/server", router);
 
 app.get("/comments", (req, res) => {
   Comment.find()
