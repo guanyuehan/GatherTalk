@@ -97,3 +97,6 @@ app.get("/chat", async (req, res) => {
 app.use((req, res) => {
   res.render("404");
 });
+
+// remember to remove the .html on the web url if its there 
+// access using http://localhost:3000/home
